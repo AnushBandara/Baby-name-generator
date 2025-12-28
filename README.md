@@ -1,9 +1,10 @@
-# 🌸 BlossomNames – AI Baby Name Generator
+# BlossomNames – AI Baby Name Generator using LSTM
 
 
 ![BlossomNames UI](./Screenshot.jpeg)
 
 **Live Web App:** https://blossomnames.netlify.app/
+
 **Cloud‑Hosted API:** https://baby-name-api-367079385266.asia-south1.run.app
 
 BlossomNames is an AI‑powered baby‑name generator that predicts names **one letter at a time** using a **character‑level LSTM neural network** trained on thousands of real baby names.
