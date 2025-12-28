@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&display=swap");
+
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #1f2933;
+  background-color: #0f172a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Root layout */
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  /* default variables (will be overridden by .male / .female) */
+  --accent-gradient: linear-gradient(135deg, #2563eb, #1d4ed8);
+  --accent-color: #2563eb;
+  --accent-soft-bg: #eff6ff;
+  --accent-soft-border: #bfdbfe;
+}
+
+/* Male theme (blue) */
+.app-root.male {
+  background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+  --accent-gradient: linear-gradient(135deg, #2563eb, #1d4ed8);
+  --accent-color: #2563eb;
+  --accent-soft-bg: #eff6ff;
+  --accent-soft-border: #bfdbfe;
+}
+
+/* Female theme (pink) */
+.app-root.female {
+  background: radial-gradient(circle at top, #4c0519 0, #020617 55%);
+  --accent-gradient: linear-gradient(135deg, #ec4899, #db2777);
+  --accent-color: #db2777;
+  --accent-soft-bg: #fdf2f8;
+  --accent-soft-border: #fbcfe8;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: #f9fafb;
+  border-radius: 18px;
+  padding: 24px 24px 28px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.55);
+}
+
+.title {
+  margin: 0 0 4px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  font-family: "Baloo 2", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input,
+.form-group select {
+  padding: 9px 11px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-color) 40%, transparent);
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.gender-row {
+  display: flex;
+  gap: 8px;
+}
+
+.gender-btn {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #374151;
+  transition: all 0.15s ease;
+}
+
+.gender-btn-active {
+  background: var(--accent-gradient);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.gender-btn:hover {
+  border-color: #9ca3af;
+}
+
+.submit-btn {
+  margin-top: 4px;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  background: var(--accent-gradient);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.submit-btn:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
+}
+
+.error-text {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #b91c1c;
+}
+
+.result-box {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--accent-soft-bg);
+  border: 1px solid var(--accent-soft-border);
+}
+
+.result-label {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.result-name {
+  margin: 4px 0 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+}

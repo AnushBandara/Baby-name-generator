@@ -4,6 +4,7 @@ import tensorflow as tf
 import numpy as np
 import os
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+from fastapi.middleware.cors import CORSMiddleware
 
 # ----------------------------
 # Paths & model loading
@@ -100,6 +101,14 @@ def name_generator(
 # ----------------------------
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://localhost:3000", "*"],  # dev URLs
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
