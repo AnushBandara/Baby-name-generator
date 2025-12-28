@@ -25,4 +25,4 @@ EXPOSE 8080
 
 # Run the FastAPI app with uvicorn
 # NOTE: "app.main:app" assumes your main file is app/main.py and FastAPI instance is `app`
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8080}"]

@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const API_URL = "http://localhost:8000/names/"; // backend URL
+  const API_URL = "https://baby-name-api-367079385266.asia-south1.run.app/names/"; // backend URL
 
   const handleSubmit = async (e) => {
     e.preventDefault();
